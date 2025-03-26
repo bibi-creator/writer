@@ -1,0 +1,86 @@
+:root {
+    --primary: #8B456A;    /* Deep Plum */
+    --secondary: #E0919B;  /* Coral Pink */
+    --accent: #FF782D;     /* Bright Orange */
+    --light: #f8f9fa;
+    --dark: #6A3450;       /* Darker version of Deep Plum */
+    --text: #333333;
+    --text-light: #6b6b84;
+    
+    /* Keep existing shadow and radius variables */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Update service card gradient */
+.service-card::before {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+/* Update button colors */
+.btn-outline {
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-primary {
+    background: var(--accent);
+}
+
+.btn-primary:hover {
+    background: var(--primary);
+}
+
+/* Update hero background */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+/* Update contact section background */
+.contact {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+/* Update footer background */
+footer {
+    background: var(--dark);
+}
+
+/* Update testimonial quote color */
+.testimonial-card::before {
+    color: rgba(224, 145, 155, 0.1); /* Coral Pink with opacity */
+}
+
+/* Update social links hover */
+.social-link:hover {
+    background: var(--accent);
+}
+
+/* Update floating CTA */
+.floating-cta {
+    background: var(--accent);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 120, 45, 0.7); } /* Bright Orange with opacity */
+    70% { box-shadow: 0 0 0 15px rgba(255, 120, 45, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 120, 45, 0); }
+}
+
+/* Update form focus color */
+.form-control:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(224, 145, 155, 0.2); /* Coral Pink with opacity */
+}
+
+/* Update section label color */
+.section-label {
+    color: var(--accent);
+}

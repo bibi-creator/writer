@@ -1,0 +1,150 @@
+:root {
+    --primary: #1e3a5f;    /* Dark Blue */
+    --secondary: #1e8c96;  /* Teal */
+    --accent: #ffc857;     /* Amber */
+    --light: #2c3e50;      /* Dark Blue-Gray for backgrounds */
+    --dark: #0f172a;       /* Very Dark Blue */
+    --text: #e0f0ff;       /* Light Blue for text */
+    --text-light: #a0c0d0; /* Lighter Blue for secondary text */
+    
+    /* Keep existing shadow and radius variables */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.5);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Body background */
+body {
+    color: var(--text);
+    background-color: var(--dark);
+}
+
+/* Service cards */
+.service-card {
+    background: var(--primary);
+    color: var(--text);
+}
+
+.service-card::before {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+/* Service card text color when hovered */
+.service-card:hover p {
+    color: #e0f0ff;
+}
+
+/* Update button colors */
+.btn-outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+/* Update hero background */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+.hero::before {
+    opacity: 0.1; /* Reduce image opacity for better contrast */
+}
+
+/* Portfolio items */
+.portfolio-item {
+    box-shadow: var(--shadow-md);
+}
+
+/* Testimonial cards */
+.testimonial-card {
+    background: var(--primary);
+    color: var(--text);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-card::before {
+    color: rgba(30, 140, 150, 0.2); /* Teal with opacity */
+}
+
+/* Services section */
+.services {
+    background-color: var(--dark);
+}
+
+/* Portfolio section */
+.portfolio {
+    background-color: var(--dark);
+}
+
+/* Testimonials section */
+.testimonials {
+    background-color: var(--dark);
+}
+
+/* Contact section */
+.contact {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+.contact-form {
+    background: var(--primary);
+    color: var(--text);
+}
+
+.form-control {
+    background: var(--dark);
+    border: 1px solid #2c5a7c;
+    color: var(--text);
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 200, 87, 0.2); /* Accent with opacity */
+}
+
+/* Update floating CTA */
+.floating-cta {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 200, 87, 0.7); } /* Amber with opacity */
+    70% { box-shadow: 0 0 0 15px rgba(255, 200, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 200, 87, 0); }
+}
+
+/* Update section label color */
+.section-label {
+    color: var(--accent);
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+}
+
+/* Social links */
+.social-link {
+    background: rgba(255,255,255,0.05);
+}
+
+.social-link:hover {
+    background: var(--accent);
+    color: var(--dark);
+}

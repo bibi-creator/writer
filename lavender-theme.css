@@ -1,0 +1,90 @@
+:root {
+    --primary: #6B4E71;    /* Deep Purple */
+    --secondary: #A799B7;  /* Lavender */
+    --accent: #FFC857;     /* Amber */
+    --light: #F9F7FB;
+    --dark: #4A3A4E;       /* Darker Purple */
+    --text: #333333;
+    --text-light: #7A7486;
+    
+    /* Keep existing shadow and radius variables */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Update service card gradient */
+.service-card::before {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+/* Update button colors */
+.btn-outline {
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Update hero background */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+/* Update contact section background */
+.contact {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+/* Update footer background */
+footer {
+    background: var(--dark);
+}
+
+/* Update testimonial quote color */
+.testimonial-card::before {
+    color: rgba(167, 153, 183, 0.1); /* Lavender with opacity */
+}
+
+/* Update social links hover */
+.social-link:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+/* Update floating CTA */
+.floating-cta {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 200, 87, 0.7); } /* Amber with opacity */
+    70% { box-shadow: 0 0 0 15px rgba(255, 200, 87, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 200, 87, 0); }
+}
+
+/* Update form focus color */
+.form-control:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(167, 153, 183, 0.2); /* Lavender with opacity */
+}
+
+/* Update section label color */
+.section-label {
+    color: var(--accent);
+}

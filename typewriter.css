@@ -1,0 +1,50 @@
+/* Typewriter effect styles */
+.hero-content .section-label,
+.hero-content h1,
+.hero-content p,
+.hero-content .btn-primary {
+    opacity: 0;
+    transform: translateY(20px);
+    font-family: 'Playfair Display', serif; /* Ensure fonts are explicitly set */
+    color: white; /* Ensure text is visible with proper contrast */
+}
+
+#typewriter-heading {
+    min-height: 60px; /* Reserve space for the content */
+}
+
+#typewriter-paragraph {
+    min-height: 50px; /* Reserve space for the content */
+}
+
+.hero-content .fade-in {
+    animation: fadeInUp 0.5s forwards;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    background-color: var(--accent);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blink-cursor 0.7s infinite;
+}
+
+/* Fixed cursor blinking */
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

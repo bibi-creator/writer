@@ -1,0 +1,135 @@
+:root {
+    --primary: #121212;    /* Nearly Black */
+    --secondary: #2E4057;  /* Dark Blue */
+    --accent: #E74E35;     /* Bright Red */
+    --light: #2C2C2C;      /* Dark Gray for backgrounds */
+    --dark: #080808;       /* Even Darker */
+    --text: #E0E0E0;       /* Light Gray for text */
+    --text-light: #ABABAB; /* Medium Gray for secondary text */
+    
+    /* Keep existing shadow and radius variables */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.5);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Body background */
+body {
+    color: var(--text);
+    background-color: var(--primary);
+}
+
+/* Service cards */
+.service-card {
+    background: var(--light);
+    color: var(--text);
+}
+
+.service-card::before {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+}
+
+/* Service card text color when hovered */
+.service-card:hover p {
+    color: #E0E0E0;
+}
+
+/* Update button colors */
+.btn-outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #c23f2a; /* Darker accent */
+    color: white;
+}
+
+/* Update hero background */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+
+/* Portfolio items */
+.portfolio-item {
+    box-shadow: var(--shadow-md);
+}
+
+/* Testimonial cards */
+.testimonial-card {
+    background: var(--light);
+    color: var(--text);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-card::before {
+    color: rgba(46, 64, 87, 0.2); /* Dark blue with opacity */
+}
+
+/* Services section */
+.services {
+    background-color: var(--primary);
+}
+
+/* Portfolio section */
+.portfolio {
+    background-color: var(--light);
+}
+
+/* Testimonials section */
+.testimonials {
+    background-color: var(--primary);
+}
+
+/* Contact section */
+.contact {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+}
+
+.contact-form {
+    background: var(--light);
+    color: var(--text);
+}
+
+.form-control {
+    background: var(--primary);
+    border: 1px solid #444;
+    color: var(--text);
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(231, 78, 53, 0.2); /* Accent with opacity */
+}
+
+/* Update floating CTA */
+.floating-cta {
+    background: var(--accent);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(231, 78, 53, 0.7); } /* Red with opacity */
+    70% { box-shadow: 0 0 0 15px rgba(231, 78, 53, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(231, 78, 53, 0); }
+}
+
+/* Update section label color */
+.section-label {
+    color: var(--accent);
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+}
