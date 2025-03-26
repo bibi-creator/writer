@@ -1,0 +1,13 @@
+{
+  "name": "writer-landingpage",
+  "version": "1.0.0",
+  "description": "Content writer landing page",
+  "main": "index.html",
+  "scripts": {
+    "predeploy": "echo 'Ready to deploy'",
+    "deploy": "gh-pages -d . -b gh-pages --dotfiles --add .gitignore"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

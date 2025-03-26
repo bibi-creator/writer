@@ -5,6 +5,8 @@
 - **Test**: Validate HTML at validator.w3.org
 - **Format code**: Maintain consistent indentation (2 spaces)
 - **Version control**: Use git for tracking changes
+- **Deploy**: Run `npm run deploy` to publish to GitHub Pages
+- **Live site**: Available at https://bibi-creator.github.io/writer/
 
 ## Code Structure & Layout
 - **Single-page layout** with multiple sections:
@@ -37,3 +39,13 @@
 - **Naming**: Use kebab-case for CSS classes, descriptive element IDs
 - **Responsive**: Mobile-first approach with grid/flex layouts
 - **Assets**: Use optimized images from placeholder services until replaced
+
+## Deployment
+- **GitHub Pages**: Project is deployed using gh-pages package
+- **Repository**: https://github.com/bibi-creator/writer
+- **Commands**:
+  - `npm run deploy` - Deploy current version to GitHub Pages
+  - `git push origin main` - Push code changes to main branch
+- **Important Notes**:
+  - A `.gitignore` file is included to prevent node_modules from being deployed
+  - Deployment script includes `--add .gitignore` flag to ensure .gitignore is respected on gh-pages branch
