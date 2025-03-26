@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="theme-selector.css">
     <link rel="stylesheet" href="typewriter.css">
+    <link rel="stylesheet" href="letter-animations.css">
     <!-- Theme CSS will be loaded dynamically via JavaScript -->
 
 </head>
@@ -315,166 +316,11 @@
         </div>
     </footer>
     
-    <script>
-        // Theme Selector Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Theme management
-            const themeOptions = document.querySelectorAll('.theme-option');
-            const head = document.querySelector('head');
-            let themeLink = null;
-            
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('selectedTheme') || 'default';
-            setTheme(savedTheme);
-            
-            // Highlight the active theme
-            document.querySelector(`.theme-option[data-theme="${savedTheme}"]`).classList.add('active');
-            
-            // Add click handlers to theme options
-            themeOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const theme = this.getAttribute('data-theme');
-                    
-                    // Remove active class from all options
-                    themeOptions.forEach(opt => opt.classList.remove('active'));
-                    
-                    // Add active class to clicked option
-                    this.classList.add('active');
-                    
-                    // Set the theme
-                    setTheme(theme);
-                    
-                    // Save preference
-                    localStorage.setItem('selectedTheme', theme);
-                });
-            });
-            
-            // Function to set the theme
-            function setTheme(theme) {
-                // Remove existing theme if any
-                if (themeLink) {
-                    themeLink.remove();
-                }
-                
-                // Skip adding link for default theme (already in base CSS)
-                if (theme !== 'default') {
-                    // Create new link element
-                    themeLink = document.createElement('link');
-                    themeLink.rel = 'stylesheet';
-                    themeLink.href = `${theme}-theme.css`;
-                    
-                    // Add to head
-                    head.appendChild(themeLink);
-                }
-            }
-        
-            // Simple script for the floating CTA button
-            document.querySelector('.floating-cta').addEventListener('click', function() {
-                document.getElementById('contact').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Add animation on scroll functionality
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.service-card, .portfolio-item, .testimonial-card');
-                
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.2;
-                    
-                    if(elementPosition < screenPosition) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-            
-            // Set initial state
-            const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .testimonial-card');
-            animatedElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            });
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Run once on load
-            
-            // Typewriter effect
-            function initTypewriter() {
-                // Get elements
-                const label = document.getElementById('label');
-                const heading = document.getElementById('typewriter-heading');
-                const paragraph = document.getElementById('typewriter-paragraph');
-                const ctaButton = document.getElementById('cta-button');
-                
-                // Store original text content
-                const headingText = "Crafting Words That Inspire, Engage & Convert";
-                const paragraphText = "I combine strategic thinking with compelling storytelling to create content that resonates with your audience and drives measurable results for your business.";
-                
-                // Clear text content
-                heading.textContent = '';
-                paragraph.textContent = '';
-                
-                // Make elements visible to begin with
-                heading.style.opacity = '1';
-                
-                // Delay before starting animation
-                setTimeout(() => {
-                    // Fade in label first
-                    label.classList.add('fade-in');
-                    
-                    // Start typing heading after label appears
-                    setTimeout(() => {
-                        typeText(heading, headingText, 70, () => {
-                            // After heading completes, show paragraph
-                            setTimeout(() => {
-                                paragraph.textContent = paragraphText;
-                                paragraph.classList.add('fade-in');
-                                
-                                // After paragraph fades in, show CTA button
-                                setTimeout(() => {
-                                    ctaButton.classList.add('fade-in');
-                                }, 500);
-                            }, 400);
-                        });
-                    }, 500);
-                }, 500);
-            }
-            
-            // Function to type text without sounds to avoid errors
-            function typeText(element, text, speed, callback) {
-                // Create cursor element
-                const cursor = document.createElement('span');
-                cursor.className = 'typing-cursor';
-                element.appendChild(cursor);
-                
-                let i = 0;
-                
-                // Type function that adds one character at a time
-                function type() {
-                    if (i < text.length) {
-                        // Add one character at a time before cursor
-                        element.insertBefore(document.createTextNode(text.charAt(i)), cursor);
-                        i++;
-                        
-                        // Random speed variation for natural feel
-                        const randomDelay = speed + (Math.random() * 40 - 20);
-                        setTimeout(type, randomDelay);
-                    } else {
-                        // Keep cursor blinking when done
-                        if (callback) callback();
-                    }
-                }
-                
-                // Start typing
-                type();
-            }
-            
-            // Start typewriter effect
-            initTypewriter();
-        });
-    </script>
+    <!-- Modular JavaScript files -->
+    <script src="js/theme-switcher.js"></script>
+    <script src="js/letter-animations.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/sound-effects.js"></script>
+    <script src="js/scroll-animations.js"></script>
 </body>
 </html>
